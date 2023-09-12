@@ -403,9 +403,7 @@ def hit():
 
 @app.route('/hit/<string:dsn_prodi_pt>', methods=['GET'])
 def hit_dsn_prodi_pt_detail(dsn_prodi_pt):
-  # Encode the dsn_prodi_pt parameter to handle special characters
   encoded_dsn_prodi_pt = quote(dsn_prodi_pt)
-  # Use the encoded_dsn_prodi_pt as input for the dsn_prodi_ptController.hit_mhs() function
   data = HitController.hit(encoded_dsn_prodi_pt)
   return jsonify(data)
 
